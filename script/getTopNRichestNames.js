@@ -2,11 +2,12 @@
 function getTopNRichestNames(number, people) {
   people.map(function(person) {
     var money = parseInt(person.income);
-    if (person.income[1] === 'B') {
+    var positionOfIndex = person.income.length - 1;
+    if (person.income[positionOfIndex] === 'B') {
       person.money = money * 1e9;
-    } else if (person.income[1] === 'M') {
+    } else if (person.income[positionOfIndex] === 'M') {
       person.money = money * 1e6;
-    } else if (person.income[1] === 'K') {
+    } else if (person.income[positionOfIndex] === 'K') {
       person.money = money * 1e3;
     }
     });
